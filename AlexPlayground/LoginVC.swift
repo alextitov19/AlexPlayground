@@ -21,34 +21,33 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        createUser()
     }
     
-    private func createUser() {
-        let db = Firestore.firestore()
-        
-        Auth.auth().createUser(withEmail: "test1@gmail.com", password: "mypass") { (result, err) in
-            
-            // Check for errors
-            if err != nil {
-                // There was an error creating the user
-                print("Error creating user")
-            }
-            else {
-                
-                // User was created successfully, now store the attributes
-                
-                db.collection("users").document(result!.user.uid).setData([
-                    "name": "John Smith",
-                    "age": 23,
-                    "country": "USA"
-                ])
-                
-            }
-        }
-
-    }
-    
+//    private func createUser() {
+//        let db = Firestore.firestore()
+//
+//        Auth.auth().createUser(withEmail: "test2@gmail.com", password: "mypass2") { (result, err) in
+//
+//            // Check for errors
+//            if err != nil {
+//                // There was an error creating the user
+//                print("Error creating user")
+//            }
+//            else {
+//
+//                // User was created successfully, now store the attributes
+//
+//                db.collection("users").document(result!.user.uid).setData([
+//                    "name": "Rachel White",
+//                    "age": 22,
+//                    "country": "USA"
+//                ])
+//
+//            }
+//        }
+//
+//    }
+//
     private func checkString(string: String?) -> Bool {
         if string != nil {
             if string!.contains("@") && string!.contains(".") {
@@ -73,15 +72,16 @@ class LoginVC: UIViewController {
         
         let db = Firestore.firestore()
         
-        db.collection("users").document(currentUser.uid)
-           .getDocument { (snapshot, error ) in
+        let docRef = db.collection("users").document(currentUser.uid)
+            
+            
+           docRef.getDocument { (document, error ) in
 
-                if let document = snapshot {
+            if let document = document, document.exists {
 
-                    print(document.data()?.values as Any)
-
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
                 } else {
-
                   print("Document does not exist")
 
                 }
