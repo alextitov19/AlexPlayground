@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40056D979A08E3340B5F4AAD /* Pods_AlexPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514E9DD98A2121D0E840526C /* Pods_AlexPlayground.framework */; };
 		7A4D565525DEEAC9005D9361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D565425DEEAC9005D9361 /* AppDelegate.swift */; };
 		7A4D565725DEEAC9005D9361 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D565625DEEAC9005D9361 /* SceneDelegate.swift */; };
 		7A4D565925DEEAC9005D9361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D565825DEEAC9005D9361 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		514E9DD98A2121D0E840526C /* Pods_AlexPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlexPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4D565125DEEAC9005D9361 /* AlexPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlexPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4D565425DEEAC9005D9361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A4D565625DEEAC9005D9361 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		7A4D565D25DEEACB005D9361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A4D566025DEEACB005D9361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A4D566225DEEACB005D9361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		977088C2C58ABFBF83A7B4CD /* Pods-AlexPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexPlayground.release.xcconfig"; path = "Target Support Files/Pods-AlexPlayground/Pods-AlexPlayground.release.xcconfig"; sourceTree = "<group>"; };
+		B6ED1840BAB5FF1E2DC41B0B /* Pods-AlexPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexPlayground.debug.xcconfig"; path = "Target Support Files/Pods-AlexPlayground/Pods-AlexPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40056D979A08E3340B5F4AAD /* Pods_AlexPlayground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79A5BB049ABE4EFD8A2783B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				514E9DD98A2121D0E840526C /* Pods_AlexPlayground.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7A4D564825DEEAC9005D9361 = {
 			isa = PBXGroup;
 			children = (
 				7A4D565325DEEAC9005D9361 /* AlexPlayground */,
 				7A4D565225DEEAC9005D9361 /* Products */,
+				FA3CE8BF3C1648B909EF0508 /* Pods */,
+				79A5BB049ABE4EFD8A2783B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = AlexPlayground;
 			sourceTree = "<group>";
 		};
+		FA3CE8BF3C1648B909EF0508 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6ED1840BAB5FF1E2DC41B0B /* Pods-AlexPlayground.debug.xcconfig */,
+				977088C2C58ABFBF83A7B4CD /* Pods-AlexPlayground.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A4D566525DEEACB005D9361 /* Build configuration list for PBXNativeTarget "AlexPlayground" */;
 			buildPhases = (
+				A4824B49D90907E704BBC0A2 /* [CP] Check Pods Manifest.lock */,
 				7A4D564D25DEEAC9005D9361 /* Sources */,
 				7A4D564E25DEEAC9005D9361 /* Frameworks */,
 				7A4D564F25DEEAC9005D9361 /* Resources */,
+				82739E321858D295EA403F4B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82739E321858D295EA403F4B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlexPlayground/Pods-AlexPlayground-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlexPlayground/Pods-AlexPlayground-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlexPlayground/Pods-AlexPlayground-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4824B49D90907E704BBC0A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlexPlayground-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A4D564D25DEEAC9005D9361 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		7A4D566625DEEACB005D9361 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6ED1840BAB5FF1E2DC41B0B /* Pods-AlexPlayground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		7A4D566725DEEACB005D9361 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 977088C2C58ABFBF83A7B4CD /* Pods-AlexPlayground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
