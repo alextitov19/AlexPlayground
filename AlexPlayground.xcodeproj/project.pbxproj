@@ -15,6 +15,7 @@
 		7A4D565E25DEEACB005D9361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D565D25DEEACB005D9361 /* Assets.xcassets */; };
 		7A4D566125DEEACB005D9361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D565F25DEEACB005D9361 /* LaunchScreen.storyboard */; };
 		7AF649DE25DEEF5C0078F0A0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF649DD25DEEF5C0078F0A0 /* LoginVC.swift */; };
+		7AF649E525DEF2D20078F0A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AF649E425DEF2D20078F0A0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7A4D566025DEEACB005D9361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A4D566225DEEACB005D9361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AF649DD25DEEF5C0078F0A0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		7AF649E425DEF2D20078F0A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		977088C2C58ABFBF83A7B4CD /* Pods-AlexPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexPlayground.release.xcconfig"; path = "Target Support Files/Pods-AlexPlayground/Pods-AlexPlayground.release.xcconfig"; sourceTree = "<group>"; };
 		B6ED1840BAB5FF1E2DC41B0B /* Pods-AlexPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexPlayground.debug.xcconfig"; path = "Target Support Files/Pods-AlexPlayground/Pods-AlexPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				7A4D565F25DEEACB005D9361 /* LaunchScreen.storyboard */,
 				7A4D566225DEEACB005D9361 /* Info.plist */,
 				7AF649DD25DEEF5C0078F0A0 /* LoginVC.swift */,
+				7AF649E425DEF2D20078F0A0 /* GoogleService-Info.plist */,
 			);
 			path = AlexPlayground;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4D566125DEEACB005D9361 /* LaunchScreen.storyboard in Resources */,
+				7AF649E525DEF2D20078F0A0 /* GoogleService-Info.plist in Resources */,
 				7A4D565E25DEEACB005D9361 /* Assets.xcassets in Resources */,
 				7A4D565C25DEEAC9005D9361 /* Main.storyboard in Resources */,
 			);
@@ -288,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -343,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

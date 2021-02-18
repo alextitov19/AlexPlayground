@@ -67,12 +67,19 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" systemColor="systemYellowColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginClicked:" destination="rF9-NI-qqb" eventType="touchUpInside" id="OhP-So-pET"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hCf-Gf-3HV"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="tBh-6q-GEc"/>
+                    <connections>
+                        <outlet property="emailTF" destination="5mR-jj-f2M" id="BKO-ej-fDB"/>
+                        <outlet property="passwordTF" destination="JuD-x8-OwJ" id="5Gn-rw-jge"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvR-fD-QLe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

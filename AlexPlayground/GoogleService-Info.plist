@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>542968870187-mkn4itf7261kmdhlphcta1v5fsokmqap.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.542968870187-mkn4itf7261kmdhlphcta1v5fsokmqap</string>
+	<key>API_KEY</key>
+	<string>AIzaSyANht9YxioTLgvixl-iwfV6p_GGvfR8xz8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>542968870187</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.madlyradlabs.messanger</string>
+	<key>PROJECT_ID</key>
+	<string>messangertesting-e6454</string>
+	<key>STORAGE_BUCKET</key>
+	<string>messangertesting-e6454.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:542968870187:ios:5450b6c778ea466d1fc16e</string>
+</dict>
+</plist>
