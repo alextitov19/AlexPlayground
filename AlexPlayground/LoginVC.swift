@@ -99,6 +99,7 @@ class LoginVC: UIViewController {
                 //Signed in sucessfully
                 print("Sucessfully signed in")
                 self.getData()
+                self.performSegue(withIdentifier: "toChatsCollection", sender: nil)
             }
         }
     }
