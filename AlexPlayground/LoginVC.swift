@@ -12,7 +12,7 @@ class LoginVC: UIViewController {
     
     public var email: String = ""
     public var password: String = ""
-
+    
     
     @IBOutlet var emailTF: UITextField!
     
@@ -21,6 +21,32 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        createUser()
+    }
+    
+    private func createUser() {
+        let db = Firestore.firestore()
+        
+        Auth.auth().createUser(withEmail: "test1@gmail.com", password: "mypass") { (result, err) in
+            
+            // Check for errors
+            if err != nil {
+                // There was an error creating the user
+                print("Error creating user")
+            }
+            else {
+                
+                // User was created successfully, now store the attributes
+                
+                db.collection("users").document(result!.user.uid).setData([
+                    "name": "John Smith",
+                    "age": 23,
+                    "country": "USA"
+                ])
+                
+            }
+        }
+
     }
     
     private func checkString(string: String?) -> Bool {
@@ -40,6 +66,29 @@ class LoginVC: UIViewController {
         }
     }
     
+    private func getData() {
+        guard let currentUser = Auth.auth().currentUser else {
+                return
+            }
+        
+        let db = Firestore.firestore()
+        
+        db.collection("users").document(currentUser.uid)
+           .getDocument { (snapshot, error ) in
+
+                if let document = snapshot {
+
+                    print(document.data()?.values as Any)
+
+                } else {
+
+                  print("Document does not exist")
+
+                }
+        }
+        
+    }
+    
     private func login() {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             
@@ -49,6 +98,7 @@ class LoginVC: UIViewController {
             } else {
                 //Signed in sucessfully
                 print("Sucessfully signed in")
+                self.getData()
             }
         }
     }
