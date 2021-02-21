@@ -14,6 +14,10 @@ class ChatCollectionVC: UIViewController {
     
     private var scrollView: UIScrollView = UIScrollView()
     
+    private var roomCount: Int = 0
+    private var currentRoom: Int = 0
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,8 @@ class ChatCollectionVC: UIViewController {
     // create the scroll view that hosts all of the message views
     private func createScrollView() {
         scrollView = UIScrollView(frame: CGRect(x: 0, y: topView.frame.maxY, width: view.frame.width, height: view.frame.height - topView.frame.height))
-        scrollView.backgroundColor = .green
+        scrollView.backgroundColor = .lightGray
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: scrollView.frame.height)
         view.addSubview(scrollView)
     }
     
@@ -41,6 +46,7 @@ class ChatCollectionVC: UIViewController {
 
             if let document = document, document.exists {
                 let rooms: [String] = document.data()!["rooms"] as! [String]
+                self.roomCount = rooms.count
                 for room in rooms {
                     self.loadRoom(roomid: room)
                 }
@@ -106,7 +112,26 @@ class ChatCollectionVC: UIViewController {
     }
     
     private func createRoomView(name: String, body: String) {
-       print("Name: \(name), body: \(body)")
+        print("Name: \(name), body: \(body)")
+        print(roomCount)
+        
+        let roomView: UIView = UIView(frame: CGRect(x: 0, y: 10 + currentRoom * 70, width: Int(scrollView.frame.width), height: 60))
+        roomView.translatesAutoresizingMaskIntoConstraints = false
+        roomView.backgroundColor = .darkGray
+
+        scrollView.addSubview(roomView)
+        
+        let bodyLabel = UILabel(frame: CGRect(x: 60, y: 35, width: roomView.frame.width - 80, height: 20))
+        bodyLabel.text = body
+        
+        let nameLabel = UILabel(frame: CGRect(x: 60, y: 5, width: roomView.frame.width - 80, height: 30))
+        nameLabel.text = name
+        nameLabel.font = .boldSystemFont(ofSize: 20)
+        
+        roomView.addSubview(nameLabel)
+        roomView.addSubview(bodyLabel)
+        
+        currentRoom += 1
     }
     
 
