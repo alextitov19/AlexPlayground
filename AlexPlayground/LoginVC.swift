@@ -21,12 +21,13 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    
     }
     
 //    private func createUser() {
 //        let db = Firestore.firestore()
 //
-//        Auth.auth().createUser(withEmail: "test2@gmail.com", password: "mypass2") { (result, err) in
+//        Auth.auth().createUser(withEmail: "test3@gmail.com", password: "mypass3") { (result, err) in
 //
 //            // Check for errors
 //            if err != nil {
@@ -38,16 +39,16 @@ class LoginVC: UIViewController {
 //                // User was created successfully, now store the attributes
 //
 //                db.collection("users").document(result!.user.uid).setData([
-//                    "name": "Rachel White",
-//                    "age": 22,
-//                    "country": "USA"
+//                    "name": "Mike Short",
+//                    "age": 27,
+//                    "country": "Spain"
 //                ])
 //
 //            }
 //        }
 //
 //    }
-//
+
     private func checkString(string: String?) -> Bool {
         if string != nil {
             if string!.contains("@") && string!.contains(".") {
@@ -98,7 +99,6 @@ class LoginVC: UIViewController {
             } else {
                 //Signed in sucessfully
                 print("Sucessfully signed in")
-                self.getData()
                 self.performSegue(withIdentifier: "toChatsCollection", sender: nil)
             }
         }
