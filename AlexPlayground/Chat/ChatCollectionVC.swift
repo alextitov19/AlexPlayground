@@ -70,12 +70,12 @@ class ChatCollectionVC: UIViewController {
                     }
                 }
                 // by now, latestDoc represents the latest message, and can not be nil
-                self.createRoomView(doc: latestDoc!)
+                self.loadDataForRoomView(doc: latestDoc!)
             }
         }
     }
     
-    private func createRoomView(doc: DocumentSnapshot) {
+    private func loadDataForRoomView(doc: DocumentSnapshot) {
         // sender id
         guard let senderuid = doc.data()!["senderuid"] as? String else {
             print("Failed to find senderuid")
@@ -86,28 +86,27 @@ class ChatCollectionVC: UIViewController {
             print("Failed to find text")
             return
         }
-        print(senderuid)
 
-        getName(id: senderuid)
-        
-        
-        
-    }
-    
-    private func getName(id: String) {
-        // get name of user based on their uid
         let db = Firestore.firestore()
-        let docRef = db.collection("users").document(id)
-        print("ID:", id)
-
+        let docRef = db.collection("users").document(senderuid)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
+                // attempt to get the name from the doc
+                guard let name = document.data()!["name"] as? String else {
+                    print("Failed to find name")
+                    return
+                }
+                self.createRoomView(name: name, body: text)
             } else {
                 print("Document does not exist")
             }
         }
+        
+        
+    }
+    
+    private func createRoomView(name: String, body: String) {
+       print("Name: \(name), body: \(body)")
     }
     
 
