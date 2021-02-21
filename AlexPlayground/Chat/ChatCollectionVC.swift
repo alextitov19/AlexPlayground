@@ -102,6 +102,7 @@ class ChatCollectionVC: UIViewController {
                     print("Failed to find name")
                     return
                 }
+                // Create the room with the name and text attributes
                 self.createRoomView(name: name, body: text)
             } else {
                 print("Document does not exist")
@@ -111,6 +112,7 @@ class ChatCollectionVC: UIViewController {
         
     }
     
+    // Create the UIView for the room and add it to the scrollview
     private func createRoomView(name: String, body: String) {
         print("Name: \(name), body: \(body)")
         print(roomCount)
