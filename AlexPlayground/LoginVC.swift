@@ -75,7 +75,7 @@ class LoginVC: UIViewController {
         let docRef = db.collection("users").document(currentUser.uid)
             
             
-           docRef.getDocument { (document, error ) in
+        docRef.getDocument { (document, error ) in
 
             if let document = document, document.exists {
 
