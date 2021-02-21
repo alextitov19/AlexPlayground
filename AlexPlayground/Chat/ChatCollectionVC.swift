@@ -53,12 +53,24 @@ class ChatCollectionVC: UIViewController {
     // load and display the specific room
     private func loadRoom(roomid: String) {
         let db = Firestore.firestore()
-        
+        // get the collection of messages
         let messageCollection = db.collection("chats").document(roomid).collection("messages")
-        
+        // get all documents in messages
         messageCollection.getDocuments { (documents, error) in
             if documents?.isEmpty == false {
-                print("Number of messages in this room: ", documents!.count)
+                let latestTimestamp: Timestamp = Timestamp(date: Date(timeIntervalSince1970: 0))
+                var latestDoc: DocumentSnapshot?
+                for document in documents!.documents {
+                    // going throught all the messages in the room
+                    let messageTimestamp = document.data()["timestamp"] as! Timestamp
+                    
+                    if messageTimestamp.seconds > latestTimestamp.seconds  {
+                        // this message is newer than the latest message
+                        latestDoc = document
+                    }
+                }
+                // by now, latestDoc represents the latest message, and can not be nil
+                
             }
         }
     }
