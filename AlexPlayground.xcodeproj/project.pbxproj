@@ -14,6 +14,8 @@
 		7A4D565C25DEEAC9005D9361 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D565A25DEEAC9005D9361 /* Main.storyboard */; };
 		7A4D565E25DEEACB005D9361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D565D25DEEACB005D9361 /* Assets.xcassets */; };
 		7A4D566125DEEACB005D9361 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D565F25DEEACB005D9361 /* LaunchScreen.storyboard */; };
+		7AA2F8B425E238A300B46E0D /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2F8B325E238A300B46E0D /* ChatVC.swift */; };
+		7AA2F8B925E238C000B46E0D /* ChatCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2F8B825E238C000B46E0D /* ChatCollectionVC.swift */; };
 		7AF649DE25DEEF5C0078F0A0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF649DD25DEEF5C0078F0A0 /* LoginVC.swift */; };
 		7AF649E525DEF2D20078F0A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AF649E425DEF2D20078F0A0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		7A4D565D25DEEACB005D9361 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A4D566025DEEACB005D9361 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A4D566225DEEACB005D9361 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA2F8B325E238A300B46E0D /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		7AA2F8B825E238C000B46E0D /* ChatCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionVC.swift; sourceTree = "<group>"; };
 		7AF649DD25DEEF5C0078F0A0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7AF649E425DEF2D20078F0A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		977088C2C58ABFBF83A7B4CD /* Pods-AlexPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexPlayground.release.xcconfig"; path = "Target Support Files/Pods-AlexPlayground/Pods-AlexPlayground.release.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 		7A4D565325DEEAC9005D9361 /* AlexPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				7AA2F8B225E2388400B46E0D /* Chat */,
 				7A4D565425DEEAC9005D9361 /* AppDelegate.swift */,
 				7A4D565625DEEAC9005D9361 /* SceneDelegate.swift */,
 				7A4D565825DEEAC9005D9361 /* ViewController.swift */,
@@ -86,6 +91,15 @@
 				7AF649E425DEF2D20078F0A0 /* GoogleService-Info.plist */,
 			);
 			path = AlexPlayground;
+			sourceTree = "<group>";
+		};
+		7AA2F8B225E2388400B46E0D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				7AA2F8B325E238A300B46E0D /* ChatVC.swift */,
+				7AA2F8B825E238C000B46E0D /* ChatCollectionVC.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		FA3CE8BF3C1648B909EF0508 /* Pods */ = {
@@ -212,9 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA2F8B425E238A300B46E0D /* ChatVC.swift in Sources */,
 				7A4D565925DEEAC9005D9361 /* ViewController.swift in Sources */,
 				7A4D565525DEEAC9005D9361 /* AppDelegate.swift in Sources */,
 				7AF649DE25DEEF5C0078F0A0 /* LoginVC.swift in Sources */,
+				7AA2F8B925E238C000B46E0D /* ChatCollectionVC.swift in Sources */,
 				7A4D565725DEEAC9005D9361 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
