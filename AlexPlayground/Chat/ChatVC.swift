@@ -145,11 +145,16 @@ class ChatVC: UIViewController {
     
     private func sendMessage(text: String, timestamp: Timestamp) {
         let db = Firestore.firestore()
-        db.collection("chats").document(roomid).collection("messages").document("ThisIsATestMessageDELETEME").setData([
+        db.collection("chats").document(roomid).collection("messages").document(getRandomStringForMessage()).setData([
             "senderuid": Auth.auth().currentUser!.uid,
             "text": text,
             "timestamp": timestamp
         ])
+    }
+    
+    private func getRandomStringForMessage() -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<20).map{ _ in letters.randomElement()! })
     }
     
     
