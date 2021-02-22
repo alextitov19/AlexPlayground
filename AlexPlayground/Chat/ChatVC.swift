@@ -36,6 +36,8 @@ class ChatVC: UIViewController {
         createMessageScrollView()
         
         loadRoom()
+        
+        startListeningForupdates()
     
     }
     
@@ -160,4 +162,21 @@ class ChatVC: UIViewController {
     
     // ----------------------------------------------------------------End Send Messages-------------------------------------------------------------------
     
+    
+    
+    // ----------------------------------------------------------------Realtime Updates-------------------------------------------------------------------
+
+    private func startListeningForupdates() {
+        let db = Firestore.firestore()
+        db.collection("chats").document(roomid).collection("messages")
+            .addSnapshotListener { querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("Error fetching documents: \(error!)")
+                    return
+                }
+                print("Docs: ", documents.count)
+            }
+    }
+
+    // ---------------------------------------------------------------End Realtime Updates-------------------------------------------------------------------
 }
