@@ -125,7 +125,7 @@
                     <navigationItem key="navigationItem" id="g8f-Mr-x2f"/>
                     <connections>
                         <outlet property="topView" destination="wuC-At-9cf" id="Paz-K1-qUO"/>
-                        <segue destination="Bbf-vE-W6e" kind="presentation" identifier="toChat" modalPresentationStyle="fullScreen" id="9X3-Vs-Mr9"/>
+                        <segue destination="Bbf-vE-W6e" kind="presentation" identifier="toChatRoom" modalPresentationStyle="fullScreen" id="9X3-Vs-Mr9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUO-jR-WRs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

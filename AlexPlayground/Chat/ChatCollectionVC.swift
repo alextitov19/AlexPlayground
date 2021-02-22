@@ -16,6 +16,11 @@ class ChatCollectionVC: UIViewController {
     
     private var roomCount: Int = 0
     private var currentRoom: Int = 0
+    
+    private var buttons: [UIButton] = []
+    private var roomids: [String] = []
+    
+    private var roomidToSend: String = ""
 
     
     
@@ -48,6 +53,7 @@ class ChatCollectionVC: UIViewController {
                 let rooms: [String] = document.data()!["rooms"] as! [String]
                 self.roomCount = rooms.count
                 for room in rooms {
+                    self.roomids.append(room)
                     self.loadRoom(roomid: room)
                 }
                     
@@ -130,11 +136,38 @@ class ChatCollectionVC: UIViewController {
         nameLabel.text = name
         nameLabel.font = .boldSystemFont(ofSize: 20)
         
+        let button: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: roomView.frame.width, height: roomView.frame.height))
+        button.backgroundColor = .clear
+        button.addTarget(self, action:#selector(roomClicked(sender:)), for: .touchUpInside)
+        
         roomView.addSubview(nameLabel)
         roomView.addSubview(bodyLabel)
+        roomView.addSubview(button)
+        
+        buttons.append(button)
         
         currentRoom += 1
     }
+    
+    @objc func roomClicked(sender: UIButton) {
+        guard let index = buttons.firstIndex(of: sender) else {
+            print("Could not find button of the current room in buttons")
+            return
+        }
+        roomidToSend = roomids[index]
+        performSegue(withIdentifier: "toChatRoom", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is ChatVC
+        {
+            let vc = segue.destination as? ChatVC
+            vc?.roomid = roomidToSend
+        }
+    }
+    
+    
     
 
 }

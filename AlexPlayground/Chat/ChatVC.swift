@@ -9,5 +9,15 @@ import UIKit
 import Firebase
 
 class ChatVC: UIViewController {
+    
+    public var roomid: String = ""
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("Roomid: ", roomid)
+    }
 
 }
