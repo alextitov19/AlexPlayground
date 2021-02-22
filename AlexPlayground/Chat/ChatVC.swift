@@ -174,7 +174,34 @@ class ChatVC: UIViewController {
                     print("Error fetching documents: \(error!)")
                     return
                 }
-                print("Docs: ", documents.count)
+                // reload data from database
+                self.messages = []
+                for document in documents {
+                    // going throught all the messages in the room
+                    // TODO: Display all messages
+                    guard let senderuid = document.data()["senderuid"] as? String else {return}
+                    guard let text = document.data()["text"] as? String else {return}
+                    guard let timestamp = document.data()["timestamp"] as? Timestamp else {return}
+                    
+                    let db = Firestore.firestore()
+                    let docRef = db.collection("users").document(senderuid)
+                    docRef.getDocument { (document, error) in
+                        if let document = document, document.exists {
+                            // attempt to get the name from the doc
+                            guard let name = document.data()!["name"] as? String else {
+                                print("Failed to find name")
+                                return
+                            }
+                            // Create the room with the name and text attributes
+                            let message = Message(senderuid: senderuid, name: name, text: text, timestamp: timestamp)
+                            self.messages.append(message)
+                            self.reloadData()
+                            
+                        } else {
+                            print("Document does not exist")
+                        }
+                    }
+                }
             }
     }
 
