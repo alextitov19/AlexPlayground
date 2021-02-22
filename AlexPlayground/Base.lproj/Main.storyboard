@@ -198,7 +198,7 @@
                     <navigationItem key="navigationItem" id="OPk-Hq-A4f"/>
                     <connections>
                         <outlet property="bottomView" destination="f4B-8v-tFx" id="LbF-Ks-vNT"/>
-                        <outlet property="messageTF" destination="YeR-TC-bVr" id="Z5w-em-mJl"/>
+                        <outlet property="messageTV" destination="YeR-TC-bVr" id="Z5w-em-mJl"/>
                         <outlet property="roomNameLabel" destination="D9o-sk-iGx" id="w9V-DA-YGK"/>
                         <outlet property="topView" destination="7Nc-rU-Q5i" id="zxt-xb-l5y"/>
                     </connections>

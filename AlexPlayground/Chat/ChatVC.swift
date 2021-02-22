@@ -19,14 +19,14 @@ class ChatVC: UIViewController {
     
     @IBOutlet var bottomView: UIView!
     
-    @IBOutlet var messageTF: UITextView!
+    @IBOutlet var messageTV: UITextView!
     
     private var messageScrollView: UIScrollView = UIScrollView()
     
     private var messages: [Message] = []
     
-    private var currentMessageName: String = ""
-    
+    private var currentMessageY: Int = 0
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,9 +91,44 @@ class ChatVC: UIViewController {
     
     private func reloadData() {
         print("Messages: ", messages.count)
+        currentMessageY = 10
+        for message in messages {
+            createMessageView(message: message)
+        }
+    }
+    
+    private func createMessageView(message: Message) {
+        let messageBodyLabel = UILabel(frame: CGRect(x: 10, y: 20, width: 150, height: heightForView(text: message.text, font: UIFont.systemFont(ofSize: 12), width: 150)))
+        messageBodyLabel.numberOfLines = 0
+        messageBodyLabel.lineBreakMode = .byWordWrapping
+        messageBodyLabel.text = message.text
+        messageBodyLabel.font = .systemFont(ofSize: 12)
         
+        let messageView: UIView = UIView(frame: CGRect(x: 5, y: currentMessageY , width: 155, height: Int(messageBodyLabel.frame.height) + 30))
+        messageView.addSubview(messageBodyLabel)
+        
+        let nameLabel: UILabel = UILabel(frame: CGRect(x: 10, y: 0, width: 150, height: 20))
+        nameLabel.text = message.name
+        nameLabel.font = .boldSystemFont(ofSize: 14)
+        
+        messageView.addSubview(nameLabel)
+        
+        currentMessageY = currentMessageY + Int(messageView.frame.height) + 10
+        messageView.backgroundColor = #colorLiteral(red: 0.7333870591, green: 0.5166120753, blue: 0.7627034043, alpha: 1)
+        messageView.layer.cornerRadius = 15
+        messageScrollView.addSubview(messageView)
     }
 
+    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+       label.numberOfLines = 0
+       label.lineBreakMode = NSLineBreakMode.byWordWrapping
+       label.font = font
+       label.text = text
+
+       label.sizeToFit()
+       return label.frame.height
+   }
     
     private func displayMessage(name: String, text: String) {
         
