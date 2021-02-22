@@ -46,6 +46,9 @@ class ChatVC: UIViewController {
     }
     
     
+    
+    
+    
     private func loadRoom() {
         let db = Firestore.firestore()
         // get the collection of messages
@@ -78,23 +81,17 @@ class ChatVC: UIViewController {
                             print("Document does not exist")
                         }
                     }
-                    
-                    
-                    
-                    
                 }
-                
-                
             }
         }
-        
-        
-        
-        
     }
+    
+    
+    
     
     private func reloadData() {
         print("Messages: ", messages.count)
+        
     }
 
     
