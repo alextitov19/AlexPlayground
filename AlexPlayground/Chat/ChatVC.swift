@@ -130,15 +130,29 @@ class ChatVC: UIViewController {
        return label.frame.height
    }
     
-    private func displayMessage(name: String, text: String) {
-        
-    }
+ 
     
     
-    
+    // ------------------------------------------------------------------Send Messages-------------------------------------------------------------------
     
     @IBAction func sendButtonClicked(_ sender: UIButton) {
-        
+        if messageTV.text != nil {
+            print("Sending message")
+            sendMessage(text: messageTV.text!, timestamp: Timestamp())
+            print("Message sent")
+        }
     }
+    
+    private func sendMessage(text: String, timestamp: Timestamp) {
+        let db = Firestore.firestore()
+        db.collection("chats").document(roomid).collection("messages").document("ThisIsATestMessageDELETEME").setData([
+            "senderuid": Auth.auth().currentUser!.uid,
+            "text": text,
+            "timestamp": timestamp
+        ])
+    }
+    
+    
+    // ----------------------------------------------------------------End Send Messages-------------------------------------------------------------------
     
 }
