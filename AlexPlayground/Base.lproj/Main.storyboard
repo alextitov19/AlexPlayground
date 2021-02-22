@@ -184,6 +184,9 @@
                                         <state key="normal" backgroundImage="paperplane.fill" catalog="system">
                                             <color key="titleColor" systemColor="systemYellowColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendButtonClicked:" destination="Bbf-vE-W6e" eventType="touchUpInside" id="ehL-1m-4fR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,6 +196,12 @@
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="OPk-Hq-A4f"/>
+                    <connections>
+                        <outlet property="bottomView" destination="f4B-8v-tFx" id="LbF-Ks-vNT"/>
+                        <outlet property="messageTF" destination="YeR-TC-bVr" id="Z5w-em-mJl"/>
+                        <outlet property="roomNameLabel" destination="D9o-sk-iGx" id="w9V-DA-YGK"/>
+                        <outlet property="topView" destination="7Nc-rU-Q5i" id="zxt-xb-l5y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggL-AM-L8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
