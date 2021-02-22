@@ -88,7 +88,7 @@ class ChatVC: UIViewController {
     
     
     
-    
+    // called to reload the messages to the room
     private func reloadData() {
         print("Messages: ", messages.count)
         currentMessageY = 10
