@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		40056D979A08E3340B5F4AAD /* Pods_AlexPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514E9DD98A2121D0E840526C /* Pods_AlexPlayground.framework */; };
+		7A3E01CE25E34F9C000F4EB4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E01CD25E34F9C000F4EB4 /* Message.swift */; };
 		7A4D565525DEEAC9005D9361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D565425DEEAC9005D9361 /* AppDelegate.swift */; };
 		7A4D565725DEEAC9005D9361 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D565625DEEAC9005D9361 /* SceneDelegate.swift */; };
 		7A4D565925DEEAC9005D9361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D565825DEEAC9005D9361 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		514E9DD98A2121D0E840526C /* Pods_AlexPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlexPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A3E01CD25E34F9C000F4EB4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7A4D565125DEEAC9005D9361 /* AlexPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlexPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A4D565425DEEAC9005D9361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A4D565625DEEAC9005D9361 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				7AA2F8B325E238A300B46E0D /* ChatVC.swift */,
 				7AA2F8B825E238C000B46E0D /* ChatCollectionVC.swift */,
+				7A3E01CD25E34F9C000F4EB4 /* Message.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3E01CE25E34F9C000F4EB4 /* Message.swift in Sources */,
 				7AA2F8B425E238A300B46E0D /* ChatVC.swift in Sources */,
 				7A4D565925DEEAC9005D9361 /* ViewController.swift in Sources */,
 				7A4D565525DEEAC9005D9361 /* AppDelegate.swift in Sources */,
